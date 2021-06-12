@@ -1,0 +1,46 @@
+<app-navbar [pageName]="'Add Expense'"></app-navbar>
+<ion-content>
+    <div>
+        <form>
+            <ion-item>
+                <ion-label>Name</ion-label>
+                <ion-input type="text" [(ngModel)]="expense.name" name="name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Description</ion-label>
+                <ion-input type="text" [(ngModel)]="expense.description" name="description"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Expense Type</ion-label>
+                <ion-select interface="popover"
+                    [(ngModel)]="expense.type"
+                    name="expenseType">
+                    <ion-select-option *ngFor="let option of TYPES"
+                        [value]="option">
+                        {{option}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Sum</ion-label>
+                <ion-input type="number" [(ngModel)]="expense.sum" name="sum"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Location</ion-label>
+                <ion-input type="text" [(ngModel)]="expense.location" name="location"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Currency</ion-label>
+                <ion-input type="text" [(ngModel)]="expense.currency" name="currency"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Date</ion-label>
+                <ion-input type="date" [(ngModel)]="expense.date" name="date"></ion-input>
+            </ion-item>
+        </form>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-button expand="block" (click)="addExpense()">Add expense</ion-button>
+    <ion-button expand="block" color="secondary" [routerLink]="'/expenses'">Back to expenses</ion-button>
+</ion-footer>
