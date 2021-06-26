@@ -4,9 +4,14 @@
   
     <div class="form-wrapper">
         <form>
-            <ion-button (click)="logIn()">LogIn</ion-button> 
+            <ion-button *ngIf="userLogedIn(); else userLogedOut" (click)="logOut()">logOut</ion-button> 
+            <ng-template #userLogedOut>
+                <ion-button (click)="logIn()">logIn</ion-button> 
+            </ng-template>
             <br>
             <ion-button (click)="expenseList()">view expenses</ion-button>
+            <br>
+            <ion-button *ngIf="userLogedIn()" (click)="assignExpenses()">assign expenses</ion-button>
         </form>
     </div>
 

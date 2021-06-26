@@ -1,0 +1,26 @@
+<app-navbar [pageName]="'Add Expense'"></app-navbar>
+<ion-content>
+    <div>
+        <form>
+            <ion-item>
+                <ion-label>Expense Name</ion-label>
+                <ion-select interface="popover"
+                    [(ngModel)]="expense.expenseId"
+                    name="expenseName">
+                    <ion-select-option *ngFor="let exp of expenses"
+                        [value]="exp.id">
+                        {{exp.name}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Percent</ion-label>
+                <ion-input type="number" [(ngModel)]="expense.percent" name="percent"></ion-input>
+            </ion-item>
+        </form>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-button expand="block" (click)="addExpense()">Add expense</ion-button>
+    <ion-button expand="block" color="secondary" [routerLink]="'/userexpenses'">Back to expenses</ion-button>
+</ion-footer>

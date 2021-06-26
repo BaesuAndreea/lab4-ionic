@@ -5,6 +5,9 @@ import { EditExpensePage } from './pages/edit.expense/edit.expense.page';
 import { ExpensesPage } from './pages/expenses/expeses.page';
 import { HomePage } from './pages/home/home.page';
 import { LoginPage } from './pages/login/login.page';
+import { AddUserExpensePage } from './pages/user.expenses/user.expenses.add/user.expenses.add';
+import { EditUserExpensePage } from './pages/user.expenses/user.expenses.edit/user.expenses.edit';
+import { UserExpensesPage } from './pages/user.expenses/user.expenses.list/user.expenses.list';
 import { ViewExpensePage } from './pages/view.expense/view.expense.page';
 const routes: Routes = [
   {
@@ -30,6 +33,18 @@ const routes: Routes = [
   {
     path: 'expenses/view',
     component: ViewExpensePage,
+  },
+  {
+    path: 'userexpenses',
+    component: UserExpensesPage,
+  },
+  {
+    path: 'userexpenses/add',
+    component: AddUserExpensePage,
+  },
+  {
+    path: 'userexpenses/edit',
+    component: EditUserExpensePage,
   },
   {
     path: '',
